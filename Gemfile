@@ -11,10 +11,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'sqlite3'
 
 group :development, :test do
-  gem 'sqlite3'
+
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
