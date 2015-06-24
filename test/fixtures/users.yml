@@ -1,11 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+jdog:
+  username: foofoo
+  password_digest: <%= User.digest('password') %>
 
-one:
-  username: MyString
-  name: MyString
-  location: MyString
-
-two:
-  username: MyString
-  name: MyString
-  location: MyString
+  
+archer:
+  username: archer
+  password_digest: <%= User.digest('password') %>
