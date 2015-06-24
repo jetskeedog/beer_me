@@ -21,8 +21,16 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'guard'
-  gem 'guard-minitest'
+  gem 'rspec-rails'
+  gem 'guard-rspec', require: false
+
 end
+
+group :test do 
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
+
 
 
 group :production do

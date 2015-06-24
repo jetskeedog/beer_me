@@ -1,8 +1,0 @@
-jdog:
-  username: foofoo
-  password_digest: <%= User.digest('password') %>
-
-  
-archer:
-  username: archer
-  password_digest: <%= User.digest('password') %>
