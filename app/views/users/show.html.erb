@@ -1,7 +1,9 @@
 <div class="container">
 
-  <%= @user.username %>
-  <%= @user.name %>
-  <%= @user.location %>
+<p><%= image_tag @user.profilepic.url(:medium) %></p>
+<p><%= @user.username %></p>
+<p><%= @user.name %></p>
+<p><%= @user.location %></p>
+
 
 </div>

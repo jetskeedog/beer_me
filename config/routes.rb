@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
  
  
+  
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
+  resources :beers
   
   get 'about',   to: 'static_pages#about'
   get 'privacy', to: 'static_pages#privacy'
