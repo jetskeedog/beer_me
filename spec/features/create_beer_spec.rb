@@ -14,7 +14,10 @@ describe "Successful post with sign in after" do
     sign_in_user 'username', 'password'
     page.should have_content('Signed in successfully.')
     
-    fill_in "Title", with: "Greate summer beer"
+    fill_in "Title", with: "Great summer beer"
+    fill_in "Name", with: "Bud Light"
+    fill_in "Description", with: "This was taken in my kitchen, oh how I miss the summer."
+    attach_file "Beer pic", "spec/images/test_beer.JPG"
     click_button "Add Beer"
     
     page.should have_content('Cheers, your beer was added!')
@@ -29,6 +32,23 @@ describe "Post unsuccessful without title" do
     click_button "Add Beer"
     
     page.should have_content("Title can't be blank")
+  end
+end
+
+describe "Successful post from home page" do
+  it "post is successful" do
+    
+    sign_in_user 'username', 'password'
+    page.should have_content('Signed in successfully.')
+    
+    visit "/"
+    fill_in "Title", with: "Great summer beer"
+    fill_in "Name", with: "Bud Light"
+    fill_in "Description", with: "This was taken in my kitchen, oh how I miss the summer."
+    attach_file "Beer pic", "spec/images/test_beer.JPG"
+    click_button "Add Beer"
+    
+    page.should have_content('Cheers, your beer was added!')
   end
 end
 

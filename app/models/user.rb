@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :beers, dependent: :destroy
   
   #profile image - paperclip gem
    has_attached_file :profilepic, :styles => {:medium => "300x300>", :thumb => '100x100>' }

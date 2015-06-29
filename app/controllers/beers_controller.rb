@@ -7,7 +7,7 @@ class BeersController < ApplicationController
   end
 
   def index
-    @beers = Beer.all
+    @beers = Beer.paginate(:page => params[:page], :per_page => 25)
   end
 
   def new
