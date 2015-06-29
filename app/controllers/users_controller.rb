@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: :destroy
+
   
   def show
     @user = User.find(params[:id])
     @beers = @user.beers.paginate(:page => params[:page], :per_page => 25)
   end
-  
+
+  def index
+    @users = User.paginate(:page => params[:page], :per_page => 25)
+  end
 
   
   private

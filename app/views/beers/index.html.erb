@@ -5,6 +5,10 @@
       <%= link_to (image_tag beer.beer_pic.url(:medium)), beer_path(beer) %>
       <div class="panel-body">
         <%= beer.title %>
+         <span class="badge">
+           <%= pluralize beer.reputation_for(:votes).to_i, "vote" %>
+          </span>
+        <%= link_to "up", vote_beer_path(beer, type: "up"), method: "post" %>
       </div>
     </div>
     <% end %>

@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'masonry-rails'
 gem 'will_paginate-bootstrap'
+gem 'activerecord-reputation-system'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sqlite3'

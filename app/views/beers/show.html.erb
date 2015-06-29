@@ -1,4 +1,14 @@
-<p><%= image_tag @beer.beer_pic.url(:medium) %></p>
-<%= @beer.title %>
-<%= @beer.name %>
-<%= @beer.description %>
+<div class="transitions-enabled" id="beers">
+    <div class="box panel panel-default">
+      <%= image_tag @beer.beer_pic.url(:medium) %>
+      <div class="panel-body">
+        <%= @beer.title %>
+        <%= @beer.name %>
+        <%= @beer.description %>
+        <span class="badge">
+          <%= pluralize @beer.reputation_for(:votes).to_i, "vote" %>
+        </span>
+       <%= link_to "up", vote_beer_path(@beer, type: "up"), method: "post" %>
+      </div>
+  </div>
+</div>

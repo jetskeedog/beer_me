@@ -6,8 +6,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
-  resources :beers
+  resources :beers do
+    member { post :vote }
+  end
   
+
   get 'about',   to: 'static_pages#about'
   get 'privacy', to: 'static_pages#privacy'
   get 'contact', to: 'static_pages#contact'
